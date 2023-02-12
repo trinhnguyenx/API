@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body class="learn-bar">
+    <section class="todoapp">
+        <header class="header">
+            <h1>todos</h1>
+            <input class="new-todo" placeholder="What needs to be done?" autofocus="">
+        </header>
+        <section class="main" style="display: block;">
+            <input id="toggle-all" class="toggle-all" type="checkbox">
+            <label for="toggle-all">Mark all as complete</label>
+            <ul class="todo-list">
+                    
+            </ul>
+        </section>
+        <footer class="footer" style="display: block;">
+            <span class="todo-count"><strong class="todo-number">0</strong> items left</span>
+            <ul class="filters">
+                <li>
+                    <a href="#" class="filters-all selected">All</a>
+                </li>
+                <li>
+                    <a href="#" class="filters-active ">Active</a>
+                </li>
+                <li>
+                    <a href="#" class="filters-completed">Completed</a>
+                </li>
+            </ul>
+            <button class="clear-completed">Clear completed</button>        
+        </footer>
+    </section>
+
+        <div class="loading">
+            <div class="animation-square"></div>
+    </div>
+ 
+    <script>
+        //when click to a change class='seleted' on ul class='filters'
+        const filters = document.querySelector('.filters');
+        const filter = filters.querySelectorAll('a');
+        filter.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                filter.forEach((item) => {
+                    item.classList.remove('selected');
+                })
+                e.target.classList.add('selected');
+            })
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./index2.js"></script>
+</body>
+</html>
